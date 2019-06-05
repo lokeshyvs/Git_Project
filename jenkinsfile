@@ -4,7 +4,9 @@ node {
     stage('git project') {
         git credentialsId: 'githubUID', url: 'https://github.com/lokeshyvs/Git_Project.git'
     }
-    
+    stage('Email notification') {
+        mail bcc: '', body: 'Hi welcome to email alerts in jenkins build', cc: '', from: '', replyTo: '', subject: 'Build Status', to: 'lokeshyvs@gmail.com'
+    }
 }
 def notify(status){
     emailext (
