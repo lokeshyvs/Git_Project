@@ -9,9 +9,7 @@ node {
     }
 }
 def notify(status){
-    emailext (
-      to: 'lokeshyvs@gmail.com',
-      subject:"Job '${JOB_NAME}' (${BUILD_NUMBER}) is waiting for input",
-      body: "<p>${status}: Job "
-    )
+    mail to: 'lokeshyvs@gmail.com',
+    subject: "Job '${JOB_NAME}' (${BUILD_NUMBER}) is waiting for input",
+    body: "${status}:Please go to ${BUILD_URL} and verify the build"
  }
