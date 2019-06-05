@@ -1,5 +1,5 @@
 node {
-    notify('Started')
+    
     
     stage('git project') {
         git credentialsId: 'githubUID', url: 'https://github.com/lokeshyvs/Git_Project.git'
